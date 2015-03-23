@@ -76,9 +76,9 @@ class PayseraPaymentsController extends Controller
      */
     public function redirectToPaymentAction()
     {
-        $acceptUrl = $this->generateUrl('paysera.accept');
-        $cancelUrl = $this->generateUrl('paysera.cancel');
-        $callbackUrl = $this->generateUrl('paysera.callback');
+        $acceptUrl = $this->generateUrl('paysera.accept', array(), true);
+        $cancelUrl = $this->generateUrl('paysera.cancel', array(), true);
+        $callbackUrl = $this->generateUrl('paysera.callback', array(), true);
 
         $url = $this->container->get('evp_web_to_pay.request_builder')->buildRequestUrlFromData(array(
             'orderid' => 0,
